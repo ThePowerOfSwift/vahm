@@ -20,8 +20,6 @@
 		E71E21130EFEBD98002D74A2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E21120EFEBD98002D74A2 /* OpenGL.framework */; };
 		E71E2B270F02A3C9002D74A2 /* OpenCVProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E71E2B260F02A3C9002D74A2 /* OpenCVProcessor.m */; };
 		E71E302E0F0505AA002D74A2 /* CVOCVView.m in Sources */ = {isa = PBXBuildFile; fileRef = E71E302D0F0505AA002D74A2 /* CVOCVView.m */; };
-		E71E30440F0505F5002D74A2 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = E71E30430F0505F5002D74A2 /* README.txt */; };
-		E7A1762A0F053D5700E3F45B /* UPDATES.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7A176290F053D5700E3F45B /* UPDATES.txt */; };
 		E7BA5D7C0F1E9F1900CCFC0E /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BA5D7B0F1E9F1900CCFC0E /* Quartz.framework */; };
 		E7BA5E7D0F1ECB2700CCFC0E /* CGImageWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BA5E7C0F1ECB2700CCFC0E /* CGImageWrapper.m */; };
 		E7C4A15A0EAE386D004169F3 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C4A1590EAE386D004169F3 /* CoreVideo.framework */; };
@@ -62,8 +60,6 @@
 		E71E2B260F02A3C9002D74A2 /* OpenCVProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenCVProcessor.m; sourceTree = "<group>"; };
 		E71E302C0F0505AA002D74A2 /* CVOCVView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVOCVView.h; sourceTree = "<group>"; };
 		E71E302D0F0505AA002D74A2 /* CVOCVView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVOCVView.m; sourceTree = "<group>"; };
-		E71E30430F0505F5002D74A2 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		E7A176290F053D5700E3F45B /* UPDATES.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UPDATES.txt; sourceTree = "<group>"; };
 		E7BA5D7B0F1E9F1900CCFC0E /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
 		E7BA5E7B0F1ECB2700CCFC0E /* CGImageWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGImageWrapper.h; sourceTree = "<group>"; };
 		E7BA5E7C0F1ECB2700CCFC0E /* CGImageWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGImageWrapper.m; sourceTree = "<group>"; };
@@ -130,8 +126,6 @@
 				E7BA5E7B0F1ECB2700CCFC0E /* CGImageWrapper.h */,
 				E7BA5E7C0F1ECB2700CCFC0E /* CGImageWrapper.m */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
-				E71E30430F0505F5002D74A2 /* README.txt */,
-				E7A176290F053D5700E3F45B /* UPDATES.txt */,
 				9396BE05109B4F2200E28E66 /* OpenCvBlinkDetection.h */,
 				9396BE06109B4F2200E28E66 /* OpenCvBlinkDetection.m */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -209,8 +203,6 @@
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				2B531E1B0BBB3FBD00F42B98 /* Icon.icns in Resources */,
-				E71E30440F0505F5002D74A2 /* README.txt in Resources */,
-				E7A1762A0F053D5700E3F45B /* UPDATES.txt in Resources */,
 				9396C56A109C8F0300E28E66 /* libs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
