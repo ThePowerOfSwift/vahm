@@ -6,7 +6,7 @@
  *  Brought to you by buzamoto. http://buzamoto.com
  */
 
-#include "cv.h"
+#include "OpenCV/cv.h"
 #import "CVOCVController.h"
 #import "OpenCVProcessor.h"
 #import "OpenCvBlinkDetection.h"
@@ -250,7 +250,7 @@ static CGImageRef CreateCGImageFromPixelBuffer(CVImageBufferRef inImage, OSType 
     }
     
     //Process the frame, and get the result.
-    IplImage *resultImage = [OpenCVProcessor passThrough:frameImage];
+    //IplImage *resultImage = [OpenCVProcessor passThrough:frameImage];
     //IplImage *resultImage = [OpenCVProcessor noiseFilter:frameImage];
     //IplImage *resultImage = [OpenCVProcessor findSquares:frameImage];
     //IplImage *resultImage = [OpenCVProcessor hueSatHistogram:frameImage];
@@ -261,15 +261,17 @@ static CGImageRef CreateCGImageFromPixelBuffer(CVImageBufferRef inImage, OSType 
     
     
     //IplImage *resultImage = [OpenCVProcessor motion:frameImage];
-	
-	if([blinkDetection pushFrame:frameImage])
-		[GrowlApplicationBridge notifyWithTitle:@"Blink Detection"
-									description:@"BLINK! :)" 
-							   notificationName:@"Blink"
-									   iconData:nil
-									   priority:1
-									   isSticky:NO
-								   clickContext:nil]; 
+
+// Notify Growl!
+	IplImage *resultImage = [blinkDetection pushFrame:frameImage];
+//	if([blinkDetection pushFrame:frameImage])
+//		[GrowlApplicationBridge notifyWithTitle:@"Blink Detection"
+//									description:@"BLINK! :)" 
+//							   notificationName:@"Blink"
+//									   iconData:nil
+//									   priority:1
+//									   isSticky:NO
+//								   clickContext:nil]; 
 	
 	
 

@@ -6,7 +6,7 @@
  *  Brought to you by buzamoto. http://buzamoto.com
  */
 
-#include "cv.h"
+#include "OpenCV/cv.h"
 
 #import "CVOCVController.h"
 #import "OpenCVProcessor.h"

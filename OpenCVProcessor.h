@@ -67,9 +67,4 @@
 + (IplImage *) hueSatHistogram:(IplImage *)frame;
 + (IplImage *) backProject:(IplImage *)frame;
 
-//Blink Detection
-
-+ (IplImage *) blinkDetection:(IplImage *) frame;
-
-
 @end

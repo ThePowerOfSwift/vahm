@@ -7,16 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#include "cv.h"
+#include "OpenCV/cv.h"
 
 @interface OpenCvBlinkDetection : NSObject {
 
 }
 
 - (BOOL) is_eye_pair;
-- (int) locateEye;
-- (int) isBlink;
+- (BOOL) locateEye;
+- (BOOL) isBlink;
 - (int) getConnectedComponents;
-- (BOOL) pushFrame:(IplImage*)frame;
+- (IplImage*) pushFrame:(IplImage*)frame;
 
 @end

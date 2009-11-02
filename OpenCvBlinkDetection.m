@@ -7,22 +7,24 @@
 //
 #define STAGE_INIT		1
 #define STAGE_TRACKING	2
-#define TPL_WIDTH 		16
-#define TPL_HEIGHT 		12
+#define TPL_WIDTH 		32//16
+#define TPL_HEIGHT 		24//12
 #define WIN_WIDTH		TPL_WIDTH * 2
 #define WIN_HEIGHT		TPL_HEIGHT * 2
-#define TM_THRESHOLD	0.4
+#define TM_THRESHOLD	0.2
 
 #import "OpenCvBlinkDetection.h"
+#import "Growl/Growl.h"
+#import "Growl/GrowlApplicationBridge.h"
 
-IplImage		* frame, * gray, * prev, * diff, * tpl;
-CvMemStorage	* storage;
-IplConvKernel	* kernel;
-CvSeq			* comp = 0;
-CvRect			window, eye;
-int				key, nc, found; 
-int				stage = STAGE_INIT;
-int				delay;
+static IplImage		* frame, * gray, * prev, * diff, * tpl;
+static CvMemStorage	* storage;
+static IplConvKernel	* kernel;
+static CvSeq			* comp = 0;
+static CvRect			window, eye;
+static int				key, nc, found; 
+static int				stage = STAGE_INIT;
+static int				delay;
 
 @implementation OpenCvBlinkDetection
 
@@ -51,14 +53,17 @@ int				delay;
 	return self;
 }
 
--(BOOL)pushFrame:(IplImage*)_frame
+-(IplImage*)pushFrame:(IplImage*)_frame
 {
+	IplImage *texImage = cvCreateImage(cvSize(320, 240), IPL_DEPTH_8U, 3);
+	cvCopy(_frame, texImage, 0);
 	frame = _frame;
+
 	NSLog(@"pushFrame called");
 	
 	if (delay > 0) {
 		delay--;
-		return FALSE;
+		return texImage;
 	}
 	
 	frame->origin = 0;
@@ -90,22 +95,39 @@ int				delay;
 		if (!found)
 			stage = STAGE_INIT;
 		
+		
 		if ([self isBlink])
 		{
 			NSLog(@"BLINK!");
-			return TRUE;
+				
+					[GrowlApplicationBridge notifyWithTitle:@"Blink Detection"
+												description:@"BLINK! :)" 
+										   notificationName:@"Blink"
+												   iconData:nil
+												   priority:1
+												   isSticky:NO
+											   clickContext:nil];
 		}
-		
 	}
 	
+
+	cvRectangle(texImage, cvPoint(eye.x, eye.y), cvPoint(eye.x + eye.width, eye.y + eye.height), CV_RGB(255,0,0), 1, 8, 0);
+	
 	prev = (IplImage*)cvClone(gray);
-	return FALSE;
+	return texImage;
 }
 
+
+//are the 2 found components possibly eyes?
 - (BOOL)is_eye_pair
 {
+
+	
 	if (comp == 0 || nc != 2)
+	{
 		return FALSE;
+	}
+	
 	
 	CvRect r1 = cvBoundingRect(comp, 1);
 	comp = comp->h_next;
@@ -145,10 +167,12 @@ int				delay;
 
 }
 
+//check if template is in predefined searchwindow by using cvMatchTemplate
 - (BOOL) locateEye
 {
+
 	double minval, maxval;
-	CvPoint point = cvPoint((eye.x + eye.width)/2, (eye.y + eye.height)/2);
+	CvPoint point = cvPoint(eye.x + (eye.width)/2, eye.y + (eye.height)/2);
 	CvRect win = cvRect(point.x - WIN_WIDTH / 2, point.y - WIN_HEIGHT / 2, WIN_WIDTH, WIN_HEIGHT);
 	CvPoint minloc, maxloc;
 	
@@ -166,15 +190,18 @@ int				delay;
 	IplImage* tm = cvCreateImage(cvSize(w, h), IPL_DEPTH_32F, 1);
 	
 	cvSetImageROI(gray, win);
-
-	cvMatchTemplate(gray, tpl, tm, CV_TM_CCOEFF_NORMED);
+	
+	cvMatchTemplate(gray, tpl, tm, CV_TM_SQDIFF_NORMED);
 	cvMinMaxLoc(tm, &minval, &maxval, &minloc, &maxloc, 0);
 	
 	cvResetImageROI(gray);
 	cvReleaseImage(&tm);
 	
+	NSLog(@"minval: %f maxval: %f",minval, maxval );
+
+	
 	if (minval > TM_THRESHOLD) {
-		return FALSE;
+		return FALSE; //kommt das vor?
 	}
 	
 	window = win;
@@ -185,10 +212,9 @@ int				delay;
 	
 }
 
-- (int) isBlink
+//Is the component in the search window (and at the eye's centroid)?
+- (BOOL) isBlink
 {
-	
-	//	if (is_blink(comp, nc, window, eye))
 	
 	if (comp == 0 || nc != 1)
 		return FALSE;
@@ -197,13 +223,13 @@ int				delay;
 	
 	/* component is within the search window */
 	if (r1.x < window.x)
-		return 0;
+		return FALSE;
 	if (r1.y < window.y)
-		return 0;
+		return FALSE;
 	if (r1.x + r1.width > window.x + window.width)
-		return 0;
+		return FALSE;
 	if (r1.y + r1.height > window.y + window.height)
-		return 0;
+		return FALSE;
 	
 	/* get the centroid of eye */
 	CvPoint pt = cvPoint(
@@ -213,9 +239,9 @@ int				delay;
 	
 	/* component is located at the eye's centroid */
 	if (pt.x <= r1.x || pt.x >= r1.x + r1.width)
-		return 0;
+		return FALSE;
 	if (pt.y <= r1.y || pt.y >= r1.y + r1.height)
-		return 0;
+		return FALSE;
 	
 	return TRUE;
 

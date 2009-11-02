@@ -16,6 +16,8 @@
 		9396BE07109B4F2200E28E66 /* OpenCvBlinkDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9396BE06109B4F2200E28E66 /* OpenCvBlinkDetection.m */; };
 		9396C56A109C8F0300E28E66 /* libs in Resources */ = {isa = PBXBuildFile; fileRef = 9396C565109C8F0300E28E66 /* libs */; };
 		9396C577109C913300E28E66 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9396C576109C913300E28E66 /* Growl.framework */; };
+		939B8110109EF1B200DE7BCC /* OpenCV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939B810F109EF1B200DE7BCC /* OpenCV.framework */; };
+		939B8114109EF1BE00DE7BCC /* OpenCV.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 939B810F109EF1B200DE7BCC /* OpenCV.framework */; };
 		C5E698EE0BA872BA00382716 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E698ED0BA872BA00382716 /* QTKit.framework */; };
 		C5E698F30BA8735700382716 /* CVOCVController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E698F20BA8735700382716 /* CVOCVController.m */; };
 		E71E21130EFEBD98002D74A2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E21120EFEBD98002D74A2 /* OpenGL.framework */; };
@@ -33,6 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				939B8114109EF1BE00DE7BCC /* OpenCV.framework in CopyFiles */,
 				9328578D109CB16A002FB9D8 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +57,7 @@
 		9396BE06109B4F2200E28E66 /* OpenCvBlinkDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenCvBlinkDetection.m; sourceTree = "<group>"; };
 		9396C565109C8F0300E28E66 /* libs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libs; sourceTree = "<group>"; };
 		9396C576109C913300E28E66 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = libs/Growl.framework; sourceTree = "<group>"; };
+		939B810F109EF1B200DE7BCC /* OpenCV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCV.framework; path = libs/OpenCV.framework; sourceTree = "<group>"; };
 		C5E698ED0BA872BA00382716 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		C5E698F10BA8735700382716 /* CVOCVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVOCVController.h; sourceTree = "<group>"; };
 		C5E698F20BA8735700382716 /* CVOCVController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = CVOCVController.m; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 				E71E21130EFEBD98002D74A2 /* OpenGL.framework in Frameworks */,
 				E7BA5D7C0F1E9F1900CCFC0E /* Quartz.framework in Frameworks */,
 				9396C577109C913300E28E66 /* Growl.framework in Frameworks */,
+				939B8110109EF1B200DE7BCC /* OpenCV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +108,7 @@
 				9396C576109C913300E28E66 /* Growl.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				939B810F109EF1B200DE7BCC /* OpenCV.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -255,9 +261,13 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../private framework\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/libs\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../private framework\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/libs\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -284,9 +294,13 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../private framework\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/libs\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../private framework\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/libs\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -301,15 +315,16 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = libs/opencv/include;
+				HEADER_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-lpthread",
 				);
-				OTHER_LDFLAGS = libs/opencv/lib/osx/libOpenCV.a;
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
