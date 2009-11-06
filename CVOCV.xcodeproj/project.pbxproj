@@ -20,6 +20,7 @@
 		939B8114109EF1BE00DE7BCC /* OpenCV.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 939B810F109EF1B200DE7BCC /* OpenCV.framework */; };
 		C5E698EE0BA872BA00382716 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E698ED0BA872BA00382716 /* QTKit.framework */; };
 		C5E698F30BA8735700382716 /* CVOCVController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E698F20BA8735700382716 /* CVOCVController.m */; };
+		C68806EA10A4232200F32CD7 /* program_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = C68806E910A4232200F32CD7 /* program_icon.icns */; };
 		E71E21130EFEBD98002D74A2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E21120EFEBD98002D74A2 /* OpenGL.framework */; };
 		E71E2B270F02A3C9002D74A2 /* OpenCVProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E71E2B260F02A3C9002D74A2 /* OpenCVProcessor.m */; };
 		E71E302E0F0505AA002D74A2 /* CVOCVView.m in Sources */ = {isa = PBXBuildFile; fileRef = E71E302D0F0505AA002D74A2 /* CVOCVView.m */; };
@@ -61,6 +62,7 @@
 		C5E698ED0BA872BA00382716 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		C5E698F10BA8735700382716 /* CVOCVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVOCVController.h; sourceTree = "<group>"; };
 		C5E698F20BA8735700382716 /* CVOCVController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = CVOCVController.m; sourceTree = "<group>"; };
+		C68806E910A4232200F32CD7 /* program_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = program_icon.icns; sourceTree = "<group>"; };
 		E71E21120EFEBD98002D74A2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E71E2B250F02A3C9002D74A2 /* OpenCVProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVProcessor.h; sourceTree = "<group>"; };
 		E71E2B260F02A3C9002D74A2 /* OpenCVProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenCVProcessor.m; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				2B531E1A0BBB3FBD00F42B98 /* Icon.icns */,
+				C68806E910A4232200F32CD7 /* program_icon.icns */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				2B531E1B0BBB3FBD00F42B98 /* Icon.icns in Resources */,
 				9396C56A109C8F0300E28E66 /* libs in Resources */,
+				C68806EA10A4232200F32CD7 /* program_icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

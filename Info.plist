@@ -11,7 +11,7 @@
 	<key>CFBundleHelpBookName</key>
 	<string>CVOCV Help</string>
 	<key>CFBundleIconFile</key>
-	<string>Icon.icns</string>
+	<string>program_icon.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.buzamoto.CVOCV</string>
 	<key>CFBundleInfoDictionaryVersion</key>

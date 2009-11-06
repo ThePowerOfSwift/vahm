@@ -90,7 +90,7 @@ OpenCvBlinkDetection *blinkDetection;
     
     NSLog(@"Devices found: %@", [QTCaptureDevice inputDevices]);
     
-    videoDevice = [[QTCaptureDevice inputDevices] objectAtIndex:2];
+    videoDevice = [[QTCaptureDevice inputDevices] objectAtIndex:3];
     
     NSLog(@"Selecting device %@", videoDevice);
     
